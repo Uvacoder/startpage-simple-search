@@ -14,7 +14,7 @@ googletranslate [sentence] (or gt [sentence])\
 googlemaps [search] (or gmaps [search])\
 twitch [search]\
 imdb [search]\
-code [path/to/file.txt]v
+code [path/to/file.txt]\
 echo <what_you_want_to_echo>\
 clear\
 
