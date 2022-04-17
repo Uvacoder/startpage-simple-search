@@ -1,5 +1,5 @@
 function google(cmd) {
-    if (!(cmd == undefined)) {
+    if (cmd != "google") {
         str = "";
         var parameters = cmd.split(" ").slice(1);
         for (var i = 0; i < parameters.length; i++) {
@@ -12,7 +12,7 @@ function google(cmd) {
 }
 
 function reddit(cmd) {
-    if (!(cmd == undefined)) {
+    if (cmd != "reddit") {
         window.open("https://www.reddit.com/r/" + cmd.split(" ").slice(1)[0]);
     } else {
         window.open("https://www.reddit.com/");
