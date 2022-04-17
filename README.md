@@ -6,10 +6,10 @@ A Startpage that looks like a Terminal.
 
 # Premade commands
 
-reddit [subreddit]
-google [search]
-echo <what_you_want_to_echo>
-clear
+reddit [subreddit]\
+google [search]\
+echo <what_you_want_to_echo>\
+clear\
 
 # How to add commands ?
 
