@@ -10,11 +10,11 @@ reddit [subreddit]\
 google [search]\
 youtube [search]\
 github [search]\
-googletranslate [sentence] (or gt [sentence])
-googlemaps [search] (or gmaps [search])
-twitch [search]
-imdb [search]
-code [path/to/file.txt]
+googletranslate [sentence] (or gt [sentence])\
+googlemaps [search] (or gmaps [search])\
+twitch [search]\
+imdb [search]\
+code [path/to/file.txt]v
 echo <what_you_want_to_echo>\
 clear\
 
