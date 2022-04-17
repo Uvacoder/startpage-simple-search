@@ -14,7 +14,7 @@ clear\
 # How to add commands ?
 
 To add commands, go to the commands.js file in the sources.\
-You will see some pre-made commands that you will be able to edit and you can create new ones, these commands are just functions.
+You will see some premade commands that you will be able to edit and you can create new ones, these commands are just functions.
 
 ```js
 
