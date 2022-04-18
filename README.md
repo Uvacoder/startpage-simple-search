@@ -1,8 +1,26 @@
 # Terminal Startpage
 
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
+![Maintainer](https://img.shields.io/badge/maintainer-EmDev21-blue)
+
 A Startpage that looks like a Terminal.
 
 ![](preview.png)
+
+# Theming
+
+Want to customize the look of your Startpage ?\
+We got you covered. You need to edit the terminal.css variables.
+
+```css
+
+:root {
+    --main-bg-color: #547c99;
+    --prompt-bg-color: #151515;
+    --text-color: #6c99bb;
+}
+
+```
 
 # Premade commands
 
@@ -167,21 +185,6 @@ function clear(cmd) {
 
 function echo(cmd) {
     block_log(cmd.split(" ").slice(1).join(" "))
-}
-
-```
-
-# Theming
-
-Want to customize the look of your Startpage ?\
-We got you covered. You need to edit the terminal.css variables.
-
-```css
-
-:root {
-    --main-bg-color: #547c99;
-    --prompt-bg-color: #151515;
-    --text-color: #6c99bb;
 }
 
 ```
