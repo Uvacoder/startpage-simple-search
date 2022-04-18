@@ -34,7 +34,7 @@ twitch [search]\
 imdb [search]\
 code [path/to/file.txt]\
 echo <what_you_want_to_echo>\
-clear
+clear (or cls)
 
 # How to add commands ?
 
