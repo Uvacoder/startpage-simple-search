@@ -2,47 +2,43 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>$</title>
+	<title>New Tab</title>
 	<style>
 		:root{--main-bg-color:#2e3440;--prompt-bg-color:#151515;--text-color:#6c99bb}
 		*{margin:0;padding:0;border:0;outline:0;font-family:monospace;font-size:1rem}
 		body{width:100vw;height:100vh;align-items:center;justify-content:center;overflow:hidden;background-color:var(--main-bg-color)}
-		#screen{width:56vw;box-shadow:1px 1px 10px;border-radius:4px;padding:1.5em 0;overflow:auto;display:flex;flex-direction:column-reverse;background-color:var(--prompt-bg-color)}
-		#Container,#Container>div{transform:rotateX(180deg)}
+		#screen{width:56vw;box-shadow:1px 1px 10px;border-radius:4px;padding:1.5em 0;background-color:var(--prompt-bg-color);margin:auto;margin-top:2rem;margin-bottom:2rem}
 		.log{padding-left:10px;padding-right:10px;color:var(--text-color)}
 		input{background-color:var(--prompt-bg-color);color:var(--text-color);width:90%}
-		#input{padding-left:10px;padding-right:10px;color:var(--text-color)}
+		#input{padding-left:20px;padding-right:10px;color:var(--text-color)}
 		#input p{display:inline-block}
 		h2{color:#9ac2c2;font-size:1.5rem;font-weight:500;margin:0;white-space:nowrap;text-overflow:ellipsis;overflow-x:hidden}
 		div.container{width:calc(100% - 6rem);max-width:1000px;margin:0 auto;color:#d6dce8;background-color:#373e4d;border-radius:0;box-shadow:#2c4948 12px 12px 0,#2a4549 24px 24px 0,#29414a 36px 36px 0,#273d4b 48px 48px 0,#25394c 60px 60px 0;border:.125rem solid #579190;overflow:hidden}
-		div.bookmark-filter>button{cursor:pointer;color:#9ac2c2;width:calc(2rem);height:calc(2rem);-moz-box-align:center;align-items:center;-moz-box-pack:center;justify-content:center;background-color:transparent;border:medium none;outline:currentcolor none medium}
-		div.bookmark-filter>input{height:calc(2rem);color:#d6dce8;background-color:transparent;border-color:currentcolor currentcolor #a6b4cd;border-style:none none solid;border-width:medium medium .125rem;border-image:none 100%/1/0 stretch;outline:currentcolor none medium;width:100%}
-		#bookmarks{list-style-type:none;padding:0;margin:0}
+		#bookmarks{list-style-type:none;padding:0;margin:0;}
 		#bookmarks li{margin:5px 15px 5px 0;float:left}
-		#bookmarks li a{color:#d6dce8;padding:6px;text-decoration:none;font-size:18px}
+		#bookmarks li a{color:#d6dce8;padding:6px;text-decoration:none}
 		#bookmarks li a:hover:not(.header):hover{text-decoration: underline}
+		div#bookmark-filter {width: 56vw; margin:auto;position:relative;max-height:16rem;overflow:hidden}
+		div#introduction p {width: 56vw; margin:auto; color:#d6dce8;margin-top:10%}
 	</style>
 </head>
 <body>
-	<div>
-		<div id="screen">
-			<div id="Container">
-				<div id="input">
-					<p id="input_title"></p>
-					<input id="input_source" type="text" spellcheck="false" autocomplete="off" value="" placeholder="Enter bookmark or prefix..." onkeyup="filter_bookmarks()" autofocus>
-				</div>
-				<div id="logger">
-					<div id="wrapper">
-					</div>
-				</div>
-			</div>
+	<div id="introduction">
+		<p>
+			<script type="text/javascript">var time=new Date;time.getHours()<12?document.write("Good Morning"):time.getHours()>=12&&time.getHours()<=17?document.write("Good Afternoon"):time.getHours()>17&&time.getHours()<=24?document.write("Good Evening"):document.write("Good Night");</script>
+		</p>
+	</div>
+	<div id="screen">
+		<div id="input">
+			<p id="input_title"></p>
+			<input id="input_source" type="text" spellcheck="false" autocomplete="off" value="" placeholder="Enter bookmark or search prefix..." onkeyup="filter_bookmarks()" autofocus>
 		</div>
 	</div>
-	<div class="bookmark-filter">
+	<div id="bookmark-filter">
 		<ul id="bookmarks">
 			<li><a href="https://r-roms.github.io/">/r/Roms Megathread</a></li>
 			<li><a href="https://vsrecommendedgames.fandom.com/wiki/V/%27s_Recommended_Games_Wiki">/v/'s Recommended Games Wiki</a></li>
-			<li><a href="http://boards.4chan.org/g/">4chan /g/</a></li>
+			<li><a href="http://boards.4chan.org/g/">4chan /g/ Technology</a></li>
 			<li><a href="https://www.9kw.eu/usercaptcha.html">9kw Captcha</a></li>
 			<li><a href="https://www.aftenposten.no/">Aftenposten Forsiden</a></li>
 			<li><a href="https://bananoprice.com/">Banano Best Price</a></li>
@@ -127,12 +123,12 @@
 			<li><a href="https://www.zoopla.co.uk/">Zoopla Properties</a></li>						
 		</ul>
 	</div>
-	<script>
+	<script type="text/javascript">
 		// filter bookmarks
 		function filter_bookmarks(){var e,t,n,a;for(e=document.getElementById("input_source").value.toUpperCase(),t=document.getElementById("bookmarks").getElementsByTagName("li"),a=0;a<t.length;a++)((n=t[a].getElementsByTagName("a")[0]).textContent||n.innerText).toUpperCase().indexOf(e)>-1?t[a].style.display="":t[a].style.display="none"}
 		// functions
 		var current_block;function new_block()
-		{(current_block=document.createElement("div")).classList.add("log"),document.getElementById("wrapper").appendChild(current_block)}
+		{(current_block=document.createElement("div")).classList.add("log")}
 		function block_log(e,n=!1){new_block()}
 		function handleKeyUp(){13===event.keyCode&&submit_command(),38===event.keyCode&&last_command()}
 		function submit_command(){var e=document.getElementById("input_source").value
