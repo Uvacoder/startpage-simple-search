@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en"></html>
 <head>
-    <meta charset="utf-8">
-    <title>$</title>
-    <style>
+	<meta charset="utf-8">
+	<title>$</title>
+	<style>
 		:root{--main-bg-color:#547c99;--prompt-bg-color:#151515;--text-color:#6c99bb}
 		*{margin:0;padding:0;border:0;outline:0;font-family:monospace;font-size:1rem}
 		body{width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background-color:var(--main-bg-color)}
@@ -13,25 +13,24 @@
 		input{background-color:var(--prompt-bg-color);color:var(--text-color);width:90%}
 		#input{padding-left:10px;padding-right:10px;color:var(--text-color)}
 		#input p{display:inline-block}
-    </style>
+	</style>
 </head>
 <body>
-    <div>
-        <div id="screen">
-            <div id="Container">
-                <div id="input">
-                    <p id="input_title"></p>
-                    <input id="input_source" type="command" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus>
-                </div>
-                <div id="logger">
-                    <div id="wrapper">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script>
+	<div>
+		<div id="screen">
+			<div id="Container">
+				<div id="input">
+					<p id="input_title"></p>
+					<input id="input_source" type="command" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus>
+				</div>
+				<div id="logger">
+					<div id="wrapper">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
 		// functions
 		var current_block;function new_block(){(current_block=document.createElement("div")).classList.add("log"),document.getElementById("wrapper").appendChild(current_block)}function block_log(e,n=!1){current_block.innerHTML=`<p class=${n&&"shell"}>`+e+"</p>",new_block()}function handleKeyUp(){13===event.keyCode&&submit_command(),38===event.keyCode&&last_command()}function submit_command(){var e=document.getElementById("input_source").value;document.getElementById("input_source").value="",new_block(),"function"==typeof window[e.split(" ")[0]]?(block_log(config.shellPrompt+e,shell=!0),window[e.split(" ")[0]](e)):""!=e&&block_log("command not found : "+e)}function last_command(){const e=document.getElementsByClassName("shell");document.getElementById("input_source").value=e[e.length-1].innerText.substr(2)}config={shellPrompt:"$ "},document.getElementById("input_title").innerText=config.shellPrompt,document.getElementById("input_source").addEventListener("keyup",handleKeyUp);
 		// searches
@@ -108,5 +107,4 @@
 		function file(t){"file"!=t?window.open("file:///"+t.split(" ").slice(1)[0]):window.open("file:///")}
 	</script>
 </body>
-
 </html>
