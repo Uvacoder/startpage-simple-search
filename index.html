@@ -32,7 +32,16 @@
 	</div>
 	<script>
 		// functions
-		var current_block;function new_block(){(current_block=document.createElement("div")).classList.add("log"),document.getElementById("wrapper").appendChild(current_block)}function block_log(e,n=!1){current_block.innerHTML=`<p class=${n&&"shell"}>`+e+"</p>",new_block()}function handleKeyUp(){13===event.keyCode&&submit_command(),38===event.keyCode&&last_command()}function submit_command(){var e=document.getElementById("input_source").value;document.getElementById("input_source").value="",new_block(),"function"==typeof window[e.split(" ")[0]]?(block_log(config.shellPrompt+e,shell=!0),window[e.split(" ")[0]](e)):""!=e&&block_log("command not found : "+e)}function last_command(){const e=document.getElementsByClassName("shell");document.getElementById("input_source").value=e[e.length-1].innerText.substr(2)}config={shellPrompt:"$ "},document.getElementById("input_title").innerText=config.shellPrompt,document.getElementById("input_source").addEventListener("keyup",handleKeyUp);
+		var current_block;function new_block()
+		{(current_block=document.createElement("div")).classList.add("log"),document.getElementById("wrapper").appendChild(current_block)}
+		function block_log(e,n=!1){current_block.innerHTML=`<p class=${n&&"shell"}>`+e+"</p>",new_block()}
+		function handleKeyUp(){13===event.keyCode&&submit_command(),38===event.keyCode&&last_command()}
+		function submit_command(){var e=document.getElementById("input_source").value
+		document.getElementById("input_source").value="",new_block(),"function"==typeof window[e.split(" ")[0]]?(block_log(config.shellPrompt+e,shell=!0),window[e.split(" ")[0]](e)):""!=e&&block_log("command not found : "+e)}
+		function last_command(){const e=document.getElementsByClassName("shell");document.getElementById("input_source").value=e[e.length-1].innerText.substr(2)}
+		config={shellPrompt:"$ "}
+		document.getElementById("input_title").innerText=config.shellPrompt
+		document.getElementById("input_source").addEventListener("keyup",handleKeyUp);
 		// searches
 		function a(t){if("a"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"+"+s[o];window.open("https://www.amazon.co.uk/s?k="+str.substring(1))}else window.open("https://www.amazon.co.uk/")}
 		function alp(t){if("alp"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"+"+s[o];window.open("https://pkgs.alpinelinux.org/packages?branch=edge&arch=x86_64&name="+str.substring(1))}else window.open("https://pkgs.alpinelinux.org/packages?name=&branch=edge&arch=x86_64")}
