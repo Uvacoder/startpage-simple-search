@@ -133,7 +133,7 @@
 		// functions
 		var current_block;function new_block()
 		{(current_block=document.createElement("div")).classList.add("log"),document.getElementById("wrapper").appendChild(current_block)}
-		function block_log(e,n=!1){current_block.innerHTML=`<p class=${n&&"shell"}>`+e+"</p>",new_block()}
+		function block_log(e,n=!1){new_block()}
 		function handleKeyUp(){13===event.keyCode&&submit_command(),38===event.keyCode&&last_command()}
 		function submit_command(){var e=document.getElementById("input_source").value
 		document.getElementById("input_source").value="",new_block(),"function"==typeof window[e.split(" ")[0]]?(block_log(config.shellPrompt+e,shell=!0),window[e.split(" ")[0]](e)):""!=e&&block_log("command not found : "+e)}
