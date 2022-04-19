@@ -4,15 +4,23 @@
 	<meta charset="utf-8">
 	<title>$</title>
 	<style>
-		:root{--main-bg-color:#547c99;--prompt-bg-color:#151515;--text-color:#6c99bb}
+		:root{--main-bg-color:#2e3440;--prompt-bg-color:#151515;--text-color:#6c99bb}
 		*{margin:0;padding:0;border:0;outline:0;font-family:monospace;font-size:1rem}
-		body{width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background-color:var(--main-bg-color)}
-		#screen{width:56vw;height:32vw;box-shadow:1px 1px 10px;border-radius:4px;padding:1.5em 0;overflow:auto;display:flex;flex-direction:column-reverse;background-color:var(--prompt-bg-color)}
+		body{width:100vw;height:100vh;align-items:center;justify-content:center;overflow:hidden;background-color:var(--main-bg-color)}
+		#screen{width:56vw;box-shadow:1px 1px 10px;border-radius:4px;padding:1.5em 0;overflow:auto;display:flex;flex-direction:column-reverse;background-color:var(--prompt-bg-color)}
 		#Container,#Container>div{transform:rotateX(180deg)}
 		.log{padding-left:10px;padding-right:10px;color:var(--text-color)}
 		input{background-color:var(--prompt-bg-color);color:var(--text-color);width:90%}
 		#input{padding-left:10px;padding-right:10px;color:var(--text-color)}
 		#input p{display:inline-block}
+		h2{color:#9ac2c2;font-size:1.5rem;font-weight:500;margin:0;white-space:nowrap;text-overflow:ellipsis;overflow-x:hidden}
+		div.container{width:calc(100% - 6rem);max-width:1000px;margin:0 auto;color:#d6dce8;background-color:#373e4d;border-radius:0;box-shadow:#2c4948 12px 12px 0,#2a4549 24px 24px 0,#29414a 36px 36px 0,#273d4b 48px 48px 0,#25394c 60px 60px 0;border:.125rem solid #579190;overflow:hidden}
+		div.bookmark-filter>button{cursor:pointer;color:#9ac2c2;width:calc(2rem);height:calc(2rem);-moz-box-align:center;align-items:center;-moz-box-pack:center;justify-content:center;background-color:transparent;border:medium none;outline:currentcolor none medium}
+		div.bookmark-filter>input{height:calc(2rem);color:#d6dce8;background-color:transparent;border-color:currentcolor currentcolor #a6b4cd;border-style:none none solid;border-width:medium medium .125rem;border-image:none 100%/1/0 stretch;outline:currentcolor none medium;width:100%}
+		#bookmarks{list-style-type:none;padding:0;margin:0}
+		#bookmarks li{margin:5px 15px 5px 0;float:left}
+		#bookmarks li a{color:#d6dce8;padding:6px;text-decoration:none;font-size:18px}
+		#bookmarks li a:hover:not(.header):hover{text-decoration: underline}
 	</style>
 </head>
 <body>
@@ -21,7 +29,7 @@
 			<div id="Container">
 				<div id="input">
 					<p id="input_title"></p>
-					<input id="input_source" type="text" spellcheck="false" autofocus>
+					<input id="input_source" type="text" spellcheck="false" autocomplete="off" value="" placeholder="Enter bookmark or prefix..." onkeyup="filter_bookmarks()" autofocus>
 				</div>
 				<div id="logger">
 					<div id="wrapper">
@@ -30,7 +38,98 @@
 			</div>
 		</div>
 	</div>
+	<div class="bookmark-filter">
+		<ul id="bookmarks">
+			<li><a href="https://r-roms.github.io/">/r/Roms Megathread</a></li>
+			<li><a href="https://vsrecommendedgames.fandom.com/wiki/V/%27s_Recommended_Games_Wiki">/v/'s Recommended Games Wiki</a></li>
+			<li><a href="http://boards.4chan.org/g/">4chan /g/</a></li>
+			<li><a href="https://www.9kw.eu/usercaptcha.html">9kw Captcha</a></li>
+			<li><a href="https://www.aftenposten.no/">Aftenposten Forsiden</a></li>
+			<li><a href="https://bananoprice.com/">Banano Best Price</a></li>
+			<li><a href="https://bnswap.xyz/">BananoNano Swap</a></li>
+			<li><a href="https://www.bbc.co.uk/news">BBC News</a></li>
+			<li><a href="https://www.blockchaincenter.net/bitcoin-rainbow-chart/">Bitcoin Rainbow Chart</a></li>
+			<li><a href="https://git.minskio.co.uk/">Cgit Repository Instance</a></li>
+			<li><a href="https://www.clozemaster.com/languages/nob-eng/play/multiple-choice">Clozemaster Norwegian</a></li>
+			<li><a href="https://www.codecademy.com/learn">Codecademy</a></li>
+			<li><a href="https://coinmarketcap.com/portfolio-tracker/">CoinMarketCap Portfolio Tracker</a></li>
+			<li><a href="https://promo.coral.co.uk/en/promo/p/rewards-grabber">Coral Daily Promotion</a></li>
+			<li><a href="https://www.cryptofeesaver.com/">Crypto Fee Saver</a></li>
+			<li><a href="https://cryptovision.live/">CryptoVision Live</a></li>
+			<li><a href="https://node.cryptovision.live/">CryptoVision Node</a></li>
+			<li><a href="https://www.toptal.com/developers/cssminifier/">CSS Minifier</a></li>
+			<li><a href="https://duolingo.com/practice">Duolingo Practice</a></li>
+			<li><a href="https://filterlists.com/">Filter List Subscriptions</a></li>
+			<li><a href="https://fitgirl-repacks.site/">FitGirl Repacks</a></li>
+			<li><a href="https://www.flightradar24.com/">Flight Radar 24</a></li>
+			<li><a href="https://admin.gandi.net/">Gandi Dashboard</a></li>
+			<li><a href="https://github.com/breadcat/">GitHub</a></li>
+			<li><a href="https://www.gov.uk/report-covid19-result">Government Report Covid Result</a></li>
+			<li><a href="https://news.ycombinator.com/news">Hacker News</a></li>
+			<li><a href="https://diskprices.com/?locale=uk">HDD Price Chart</a></li>
+			<li><a href="https://www.hemnet.se/">Hemnet Properties</a></li>
+			<li><a href="https://console.hetzner.cloud/projects">Hetzner Cloud</a></li>
+			<li><a href="https://192.168.1.1/">Home Router</a></li>
+			<li><a href="http://192.168.1.2/">Home Wireless AP</a></li>
+			<li><a href="http://www.imdb.com/chart/top">IMDb Top 250 Movies</a></li>
+			<li><a href="http://japaneseclass.jp/">Japanese Class</a></li>
+			<li><a href="https://www.toptal.com/developers/javascript-minifier/">JavaScript Minifier</a></li>
+			<li><a href="https://jungletv.live/">JungleTV</a></li>
+			<li><a href="https://www.klartale.no/">Klar Tale News</a></li>
+			<li><a href="http://192.168.1.6:8080/">Kodi Web Interface</a></li>
+			<li><a href="https://www.ladbrokes.com/en/p/promotions/casino/instantspins">Ladbrokes Daily Promotion</a></li>
+			<li><a href="https://cloud.linode.com/linodes">Linode Manager</a></li>
+			<li><a href="https://liveuamap.com/">Live Ukraine Map</a></li>
+			<li><a href="https://madaidans-insecurities.github.io/">Madaidan's Insecurities</a></li>
+			<li><a href="https://www.marinetraffic.com/">Marine Traffic</a></li>
+			<li><a href="https://www.metoffice.gov.uk/public/weather/forecast/gcw9rrxn7">Met Office Weather</a></li>
+			<li><a href="https://minskio.co.uk/">Minskio Home Page</a></li>
+			<li><a href="https://nault.cc/">Nault NANO Wallet</a></li>
+			<li><a href="https://platform.nexo.io/">Nexo Platform</a></li>
+			<li><a href="https://nexologist.com/earn-calculator/">Nexologist</a></li>
+			<li><a href="http://datomatic.no-intro.org/?page=download">No Intro DAT files</a></li>
+			<li><a href="https://www.noisli.com/">Noisli</a></li>
+			<li><a href="https://cloud.oracle.com/compute/instances">Oracle Cloud</a></li>
+			<li><a href="https://console.paperspace.com/">Paperspace Console</a></li>
+			<li><a href="http://uk.pcpartpicker.com/parts/partlist/">PC Part Picker</a></li>
+			<li><a href="https://dev.minskio.co.uk/">PHP Development Instance</a></li>
+			<li><a href="https://archive.org/download/chd_psx/CHD-PSX-USA/">PlayStation CHD Directory Listing</a></li>
+			<li><a href="https://app.prolific.co/studies">Prolific Studies</a></li>
+			<li><a href="https://www.racketboy.com/guide/hidden-gems">Racketboy Hidden Gem Games</a></li>
+			<li><a href="http://radiooooo.com/">Radiooooo</a></li>
+			<li><a href="http://en.wikiquote.org/wiki/Special:Random">Random WikiQuote</a></li>
+			<li><a href="https://readcomiconline.li/">Read Comic Online</a></li>
+			<li><a href="https://www.lightningmaps.org/">Real Time Lightning Map</a></li>
+			<li><a href="https://old.reddit.com/">Reddit</a></li>
+			<li><a href="https://www.rightmove.co.uk/">Rightmove Properties</a></li>
+			<li><a href="https://console.scaleway.com/instance/servers">Scaleway Console</a></li>
+			<li><a href="https://seedbox.minskio.co.uk/">Seedbox</a></li>
+			<li><a href="https://www.showcasecinemas.co.uk/showtimes/showcase-cinema-de-lux-leeds">Showcase Cinema Showtimes</a></li>
+			<li><a href="https://news.sky.com/uk">Sky News</a></li>
+			<li><a href="https://open.spotify.com/">Spotify</a></li>
+			<li><a href="http://suckless.org/">Suckless</a></li>
+			<li><a href="https://sync.minskio.co.uk/">Syncthing Remote Instance</a></li>
+			<li><a href="http://127.0.0.1:8384/">Syncthing Local Instance</a></li>
+			<li><a href="https://web.telegram.org/z/">Telegram Web Interface</a></li>
+			<li><a href="https://the-eye.eu/public/">The-Eye Public Directory</a></li>
+			<li><a href="https://rss.minskio.co.uk/">TinyTinyRSS Instance</a></li>
+			<li><a href="https://torrentfreak.com/most-pirated-movies-of-2022/">TorrentFreak's Most Pirated Movies of 2022</a></li>
+			<li><a href="http://www.traveline.info/">Traveline Route Planner</a></li>
+			<li><a href="https://unblocksource.eu/">Unblocked Proxy</a></li>
+			<li><a href="https://unsplash.com/">Unsplash</a></li>
+			<li><a href="https://pass.minskio.co.uk/">VaultWarden Password Manager</a></li>
+			<li><a href="https://www.ventusky.com/">Ventu Sky</a></li>
+			<li><a href="https://web.whatsapp.com/">WhatsApp Web</a></li>
+			<li><a href="https://vpn.minskio.co.uk/">WireGuard VPN Access</a></li>
+			<li><a href="https://www.powerlanguage.co.uk/wordle/">Wordle</a></li>
+			<li><a href="https://www.worldometers.info/coronavirus/">Worldometers Covid Statistics</a></li>
+			<li><a href="https://mail.yandex.com/?pdd_domain=minskio.co.uk#inbox">Yandex Mail Inbox</a></li>
+			<li><a href="https://www.zoopla.co.uk/">Zoopla Properties</a></li>						
+		</ul>
+	</div>
 	<script>
+		// filter bookmarks
+		function filter_bookmarks(){var e,t,n,a;for(e=document.getElementById("input_source").value.toUpperCase(),t=document.getElementById("bookmarks").getElementsByTagName("li"),a=0;a<t.length;a++)((n=t[a].getElementsByTagName("a")[0]).textContent||n.innerText).toUpperCase().indexOf(e)>-1?t[a].style.display="":t[a].style.display="none"}
 		// functions
 		var current_block;function new_block()
 		{(current_block=document.createElement("div")).classList.add("log"),document.getElementById("wrapper").appendChild(current_block)}
