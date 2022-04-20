@@ -9,4 +9,4 @@ This project was forked from [EmDev21/TerminalStartpage](https://github.com/EmDe
 * Hardcoded bookmark filtering
 * Not much else...
 
-Check the page source for a rundown of how things work.
+Check the page source for a rundown of how things work, there's a [live preview hosted](https://breadcat.github.io/startpage/) on Github Pages.
