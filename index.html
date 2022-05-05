@@ -137,7 +137,7 @@
 		config={shellPrompt:"$ "}
 		document.getElementById("input_title").innerText=config.shellPrompt
 		document.getElementById("input_source").addEventListener("keyup",handleKeyUp);
-		// searches
+		// input box commands
 		function a(t){if("a"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"+"+s[o];window.open("https://www.amazon.co.uk/s?k="+str.substring(1), "_self")}else window.open("https://www.amazon.co.uk/", "_self")}
 		function abb(t){if("abb"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"+"+s[o];window.open("http://audiobookbay.fi/?s="+str.substring(1), "_self")}else window.open("http://audiobookbay.fi/", "_self")}
 		function alp(t){if("alp"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"+"+s[o];window.open("https://pkgs.alpinelinux.org/packages?branch=edge&arch=x86_64&name="+str.substring(1), "_self")}else window.open("https://pkgs.alpinelinux.org/packages?name=&branch=edge&arch=x86_64", "_self")}
@@ -155,8 +155,10 @@
 		function dock(t){if("dock"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"+"+s[o];window.open("https://hub.docker.com/search/?pullCount=1&q="+str.substring(1), "_self")}else window.open("https://hub.docker.com/", "_self")}
 		function down(t){if("down"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"+"+s[o];window.open("https://downforeveryoneorjustme.com/"+str.substring(1), "_self")}else window.open("https://downforeveryoneorjustme.com/", "_self")}
 		function e(t){if("e"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"+"+s[o];window.open("https://www.ebay.co.uk/sch/i.html?_nkw="+str.substring(1), "_self")}else window.open("https://www.ebay.co.uk/", "_self")}
+		function exit(){window.close()}
 		function f(t){if("f"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"%20"+s[o];window.open("https://search.f-droid.org/?lang=en&q="+str.substring(3), "_self")}else window.open("https://f-droid.org/", "_self")}
 		function g(t){if("g"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"+"+s[o];window.open("https://www.google.co.uk/search?q="+str.substring(1), "_self")}else window.open("https://www.google.co.uk", "_self")}
+		function gamma(t){if("gamma"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"%20"+s[o];window.open("https://www.gamma-portal.com/voip/ipdc/searchInput.jspa#"+str.substring(3), "_self")}else window.open("https://www.gamma-portal.com/framework/home.jspa", "_self")}
 		function ge(t){if("ge"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"%20"+s[o];window.open("https://www.ge-tracker.com/names/"+str.substring(3), "_self")}else window.open("https://www.ge-tracker.com/", "_self")}
 		function gf(t){if("gf"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"+"+s[o];window.open("https://gamefaqs.gamespot.com/search?game="+str.substring(1), "_self")}else window.open("https://gamefaqs.gamespot.com/", "_self")}
 		function gist(t){if("gist"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"+"+s[o];window.open("https://gist.github.com/search?utf8=%E2%9C%93&q="+str.substring(1), "_self")}else window.open("https://gist.github.com/", "_self")}
@@ -169,7 +171,6 @@
 		function i(t){if("i"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"+"+s[o];window.open("https://www.google.co.uk/search?tbm=isch&q="+str.substring(1), "_self")}else window.open("https://images.google.co.uk/", "_self")}
 		function im(t){if("im"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"+"+s[o];window.open("https://www.imdb.com/find?ref_=nv_sr_fn&s=all&q="+str.substring(1), "_self")}else window.open("https://imdb.com/", "_self")}
 		function ip(t){if("ip"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"+"+s[o];window.open("https://www.ip2location.com/demo/"+str.substring(1), "_self")}else window.open("https://www.ip2location.com/", "_self")}
-		function gamma(t){if("gamma"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"%20"+s[o];window.open("https://www.gamma-portal.com/voip/ipdc/searchInput.jspa#"+str.substring(3), "_self")}else window.open("https://www.gamma-portal.com/framework/home.jspa", "_self")}
 		function ipl(t){if("ipl"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"+"+s[o];window.open("https://www.bbc.co.uk/iplayer/search?q="+str.substring(1), "_self")}else window.open("https://www.bbc.co.uk/iplayer/", "_self")}
 		function jack(t){if("jack"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"+"+s[o];window.open("https://jack.minskio.co.uk/UI/Dashboard#search="+str.substring(1), "_self")}else window.open("https://jack.minskio.co.uk", "_self")}
 		function last(t){if("last"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"+"+s[o];window.open("https://www.last.fm/search?q="+str.substring(1), "_self")}else window.open("https://www.last.fm/", "_self")}
@@ -182,8 +183,10 @@
 		function nyaa(t){if("nyaa"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"+"+s[o];window.open("https://nyaa.si/?s=seeders&o=desc&q="+str.substring(1), "_self")}else window.open("https://nyaa.si/", "_self")}
 		function osm(t){if("osm"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"+"+s[o];window.open("https://www.openstreetmap.org/search?query="+str.substring(1), "_self")}else window.open("https://www.openstreetmap.org/", "_self")}
 		function osrs(t){if("osrs"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"+"+s[o];window.open("https://oldschool.runescape.wiki/?title=Special%3ASearch&search="+str.substring(1), "_self")}else window.open("https://oldschool.runescape.wiki/", "_self")}
+		function pass(t){window.open("https://pass.minskio.co.uk/", "_self")}
 		function pc(t){if("pc"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"+"+s[o];window.open("https://pcgamingwiki.com/w/index.php?title=Special:Search&search="+str.substring(1), "_self")}else window.open("https://pcgamingwiki.com/w/index.php", "_self")}
 		function proton(t){if("proton"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"+"+s[o];window.open("https://protondb.com/search?q="+str.substring(1), "_self")}else window.open("https://protondb.com/explore", "_self")}
+		function r(){location.reload()()}
 		function rfc(t){if("rfc"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"%20"+s[o];window.open("https://datatracker.ietf.org/doc/search?rfcs=on&name="+str.substring(3), "_self")}else window.open("https://datatracker.ietf.org/", "_self")}
 		function rshs(t){if("rshs"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"+"+s[o];window.open("https://secure.runescape.com/m=hiscore_oldschool/hiscorepersonal?user1="+str.substring(1), "_self")}else window.open("https://secure.runescape.com/m=hiscore_oldschool/", "_self")}
 		function rt(t){if("rt"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"+"+s[o];window.open("https://www.rottentomatoes.com/search/?search="+str.substring(1), "_self")}else window.open("https://www.rottentomatoes.com/", "_self")}
@@ -211,8 +214,6 @@
 		function wine(t){if("wine"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"+"+s[o];window.open("https://www.winehq.org/search?q="+str.substring(1), "_self")}else window.open("https://www.winehq.org/", "_self")}
 		function wno(t){if("wno"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"+"+s[o];window.open("https://no.wikipedia.org/w/index.php?title=Special:Search&search="+str.substring(1), "_self")}else window.open("https://no.wikipedia.org/w/index.php", "_self")}
 		function y(t){if("y"!=t){str="";for(var s=t.split(" ").slice(1),o=0;o<s.length;o++)str=str+"+"+s[o];window.open("https://www.youtube.com/results?search_query="+str.substring(1), "_self")}else window.open("https://www.youtube.com/", "_self")}
-		function exit(){window.close()}
-		function r(){location.reload()()}
 	</script>
 </body>
 </html>
